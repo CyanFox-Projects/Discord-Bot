@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+    bot:
+        image: golang:1.21-alpine
+        volumes:
+            - .:/home/bot
+        command: sh -c "cd /home/bot && go run cmd/main.go"
