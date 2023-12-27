@@ -40,6 +40,9 @@ type Config struct {
 	LogLevel        log.Level    `json:"log_level"`
 	Token           string       `json:"token"`
 	MemberRole      snowflake.ID `json:"member_role"`
+	StaffRoleID     snowflake.ID `json:"staff_role_id"`
+	InfoURL         string       `json:"info_url"`
+	RulesURL        string       `json:"rules_url"`
 	WelcomeChannel  snowflake.ID `json:"welcome_channel"`
 	EmbedFooterURL  string       `json:"embed_footer_url"`
 	EmbedFooterText string       `json:"embed_footer_text"`

@@ -1,0 +1,13 @@
+{
+    "dev_mode": false,
+    "dev_guild_id": "0",
+    "log_level": 2,
+    "info_url": "https://raw.githubusercontent.com/CyanFox-Projects/Data/main/Discord/informations.md",
+    "rules_url": "https://raw.githubusercontent.com/CyanFox-Projects/Data/main/Discord/rules.md",
+    "token": "YOUR_BOT_TOKEN",
+    "member_role": "1234567890",
+    "staff_role_id": "1234567890",
+    "welcome_channel": "0987654321",
+    "embed_footer_url": "https://source.boringavatars.com/beam",
+    "embed_footer_text": "Some cool footer text"
+}

@@ -31,7 +31,17 @@ var mute = discord.SlashCommandCreate{
 func MuteHandler(b *dbot.Bot) handler.CommandHandler {
 	return func(e *handler.CommandEvent) error {
 
-		if !e.Client().Caches().MemberPermissions(e.Member().Member).Has(discord.PermissionKickMembers) {
+		roleId := b.Config.StaffRoleID
+		roleExists := false
+
+		for _, rID := range e.Member().RoleIDs {
+			if rID == roleId {
+				roleExists = true
+				break
+			}
+		}
+
+		if !roleExists {
 			return e.CreateMessage(dbot.SendNoPermissionMessage(*b))
 		}
 

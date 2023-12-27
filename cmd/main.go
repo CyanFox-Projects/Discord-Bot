@@ -41,9 +41,11 @@ func main() {
 	b := dbot.New(logger, version, *cfg)
 
 	h := handler.New()
-	h.Command("/version", commands.VersionHandler(b))
 	h.Command("/mute", commands.MuteHandler(b))
 	h.Command("/unmute", commands.UnMuteHandler(b))
+	h.Command("/purge", commands.PurgeHandler(b))
+	h.Command("/embed", commands.EmbedHandler(b))
+	h.Command("/ping", commands.PingHandler(b))
 
 	b.SetupBot(h, bot.NewListenerFunc(b.OnReady), handlers.WelcomeHandler(b))
 
