@@ -22,7 +22,7 @@ func WelcomeHandler(b *dbot.Bot) bot.EventListener {
 		embed := discord.NewEmbedBuilder()
 		embed.SetTitle("Welcome")
 		embed.SetDescription("Welcome to the CyanFox-Projects Discord Server!")
-		embed.SetColor(dbot.HexToColorInt("#00ff00"))
+		embed.SetColor(int(dbot.RGBToDecimal(51, 204, 255)))
 		embed.SetThumbnail(*e.Member.User.AvatarURL())
 		embed.AddField("User", e.Member.User.Mention(), false)
 		embed.AddField("ID", strconv.FormatUint(uint64(e.Member.User.ID), 10), false)

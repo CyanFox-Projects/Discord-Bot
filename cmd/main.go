@@ -42,6 +42,8 @@ func main() {
 
 	h := handler.New()
 	h.Command("/version", commands.VersionHandler(b))
+	h.Command("/mute", commands.MuteHandler(b))
+	h.Command("/unmute", commands.UnMuteHandler(b))
 
 	b.SetupBot(h, bot.NewListenerFunc(b.OnReady), handlers.WelcomeHandler(b))
 
