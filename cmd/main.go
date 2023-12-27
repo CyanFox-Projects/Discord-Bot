@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/CyanFox-Projects/DiscordBot/commands"
-	"github.com/CyanFox-Projects/DiscordBot/components"
 	"github.com/CyanFox-Projects/DiscordBot/handlers"
 	"github.com/disgoorg/disgo/bot"
 	"github.com/disgoorg/disgo/handler"
@@ -42,10 +41,7 @@ func main() {
 	b := dbot.New(logger, version, *cfg)
 
 	h := handler.New()
-	h.Command("/test", commands.TestHandler)
-	h.Autocomplete("/test", commands.TestAutocompleteHandler)
 	h.Command("/version", commands.VersionHandler(b))
-	h.Component("test_button", components.TestComponent)
 
 	b.SetupBot(h, bot.NewListenerFunc(b.OnReady), handlers.WelcomeHandler(b))
 
